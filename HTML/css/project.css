@@ -145,6 +145,27 @@ p{
     margin-right: 1%;
 }
 
+.bibl p{
+    margin-left: 1.65%;
+    margin-right: 6%;
+    padding-left: 5%;
+    text-indent: -3%;
+}
+
+
+.bibl ul{
+    font-size:120%
+}
+
+.bibl h2{
+    text-align:center
+}
+
+.arrow{
+    font-size: x-large;
+    text-align: center;
+    display: block}
+
 .en{
     display: none;
 }
@@ -493,22 +514,22 @@ ins.enhance.scrape::after{
     color: #73843A;
 }
 
-[data-exp=Letra\ de\ espera]::before{
+[data-exp = Letra\ de\ espera]::before{
     content: "⟨";
     color: #515050;
 }
 
-[data-exp=Letra\ de\ espera]::after{
+[data-exp = Letra\ de\ espera]::after{
     content: "⟩";
     color: #515050;
 }
 
-[data-exp=Guide\ letter]::before{
-    content: "⟨"; 
+[data-exp = Guide\ letter]::before{
+    content: "⟨";
     color: #515050;
 }
 
-[data-exp=Guide\ letter]::after{
+[data-exp = Guide\ letter]::after{
     content: "⟩";
     color: #515050;
 }
@@ -533,12 +554,12 @@ ins.enhance.scrape::after{
     width: -o-max-content;
 }
 
-@font-face {
+@font-face{
     font-family: 'palemonas';
-    src: url('../fonts/palemonas/palemmufi-reg-webfont.woff2') format('woff2'),
-         url('../fonts/palemonas/palemmufi-reg-webfont.woff') format('woff'),
-         url('../fonts/palemonas/palemmufi-reg-webfont.ttf') format('truetype'),
-         url('../fonts/palemonas/palemmufi-reg-webfont.svg#palemonas_mufiregular') format('palemonas/svg');
+    src: url('../fonts/palemonas/palemmufi-reg-webfont.woff2') format('woff2'), 
+url('../fonts/palemonas/palemmufi-reg-webfont.woff') format('woff'), 
+url('../fonts/palemonas/palemmufi-reg-webfont.ttf') format('truetype'), 
+url('../fonts/palemonas/palemmufi-reg-webfont.svg#palemonas_mufiregular') format('palemonas/svg');
     font-weight: normal;
     font-style: normal;
 
@@ -647,14 +668,14 @@ button{
     padding: 0.7em;
     margin-left: 1%;
 }
-.authors {
+.authors{
     display: flex;
     flex-direction: column;
 }
 
 .authors button{
-    width:15%;
-    align-self:center;
+    width: 15%;
+    align-self: center;
 }
 
 input{
@@ -670,17 +691,17 @@ form{
 }
 
 div.form{
-    display:flex;
+    display: flex;
 }
 
 .item{
-    flex-grow:1;
+    flex-grow: 1;
     width: 48%;
 }
 
 
 .form label{
-    padding-right:2%;
+    padding-right: 2%;
 }
 
 /*Phenomena forms*/

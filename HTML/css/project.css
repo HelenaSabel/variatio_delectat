@@ -831,6 +831,28 @@ ul ul{
 }
 
 
+figure{
+    float: right;
+    width: 30%;
+    text-align: center;
+    text-indent: 0;
+    border: thin silver solid;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+figure figure{
+
+}
+
+caption{
+    font-weight: 500;
+}
+
+figurecaption{
+    font-weight: 500;
+}
+
 
 
 /*  Small devices compatibility */

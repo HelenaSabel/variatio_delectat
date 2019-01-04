@@ -154,11 +154,11 @@ p{
 
 
 .bibl ul{
-    font-size:120%
+    font-size: 120%
 }
 
 .bibl h2{
-    text-align:center
+    text-align: center
 }
 
 .arrow{
@@ -806,6 +806,16 @@ table.sortable th > svg{
     display: inline;
 }
 
+th{
+    color: #D0CCB0;
+    white-space: nowrap;
+    background-color: #490301;
+}
+
+.second th{
+    background-color: #D0CCB0;
+    color: #CF4205;
+}
 
 ul ul{
     list-style: circle;

@@ -145,6 +145,13 @@ p{
     margin-right: 1%;
 }
 
+ul{
+    line-height: 150%;
+    text-align: justify;
+    margin-left: 1.65%;
+    margin-right: 1%;
+}
+
 .bibl p{
     margin-left: 1.65%;
     margin-right: 6%;
@@ -355,7 +362,10 @@ aside ul{
 
 .body{
     display: flex;
+}
 
+.uni{
+    font-family: 'junicode', 'Free Serif', 'EversonMono';
 }
 
 .body ol{
@@ -830,29 +840,118 @@ ul ul{
     padding-top: 3%;
 }
 
+#tab-alografos img{
+    width: 1.2em;
+}
+
+#tab-alografos .med img{
+    width: 1.7em;
+}
+
+#tab-alografos .big img{
+    width: 2em;
+}
+
+#tab-abrv-lin img{
+    width: 5em;
+}
+
+#tab-abrv-lin .small img{
+    width: 3em;
+}
+
+#tab-gap img{
+    width: 4em;
+}
+
+#tab-gap .big img{
+    width: 10em;
+}
+
+#tab-del img{
+    width: 6em;
+}
+
+#tab-del .small img{
+    width: 2.5em;
+}
+#tab-del .big img{
+    width: 12em;
+}
+
+img.fx{
+    width: 1.15em;
+}
+
+.5 img{
+    width:5em;
+}
 
 figure{
-    float: right;
-    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     text-align: center;
     text-indent: 0;
     border: thin silver solid;
-    margin: 0.5em;
     padding: 0.5em;
 }
 
+div.figure{
+    width: 100%;
+    display: flex;
+}
+
+figure.med{
+    width: 35%;
+}
+
+figure.small{
+    width: 30%;
+}
+
+figure.small img{
+    width: 70%
+}
+
+img.small{
+    width: 60%;
+}
+
+figure img{
+    width: 100%;
+}
+
 figure figure{
+    width: 50%;
+    border: 0;
 
 }
 
 caption{
-    font-weight: 500;
+    font-weight: 600;
 }
 
-figurecaption{
-    font-weight: 500;
+figcaption{
+    font-weight: 600;
 }
 
+code{
+    font-weight: 600;
+    color: #490301;
+    font-size: 1.15em;
+}
+
+.note{
+    position: relative;
+    width: 40%;
+    left: 30%;
+    background-color: #bd6d03;
+    color: #490301;
+    padding: 0.5%;
+    font-style: italic;
+    text-align: center;
+}
 
 
 /*  Small devices compatibility */

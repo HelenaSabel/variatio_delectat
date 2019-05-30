@@ -16,10 +16,10 @@ declare function djb:locus($from as node(), $to as node())
 };
 declare variable $search := request:get-parameter("phenomenon", ());
 let $values := tokenize($search, ',')
-let $songs := collection('/db/VTLGP/edition')//tei:div[@type eq 'poem']
+let $songs := collection('/db/variatio/edition')//tei:div[@type eq 'poem']
 let $readings := $songs//tei:rdg
-let $ling-features := doc('/db/VTLGP/ancillary/feature-library.xml')//tei:fs[tei:f[@name eq 'taxonomy']/tei:fs[@type eq 'linguistic']]
-let $poets := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person
+let $ling-features := doc('/db/variatio/ancillary/feature-library.xml')//tei:fs[tei:f[@name eq 'taxonomy']/tei:fs[@type eq 'linguistic']]
+let $poets := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person
 return
     <div
         class="multiple">
@@ -29,10 +29,10 @@ return
                 for $result in $values
                 return
                     (<h2><span
-                            class="pt" id="graf{$result}">{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'pt']/text(), 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</span>
+                            class="pt" id="graf{$result}">{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'pt']/text(), 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</span>
                             <span
-                            class="gl" id="grafo{$result}">{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'gl']/text(), 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</span><span
-                            class="en" id="graphs{$result}">{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'en']/text(), 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</span></h2>,
+                            class="gl" id="grafo{$result}">{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'gl']/text(), 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</span><span
+                            class="en" id="graphs{$result}">{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'en']/text(), 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</span></h2>,
                        <h3><span
                             class="pt">Testemunho</span><span
                             class="gl">Testemuño</span><span
@@ -201,7 +201,7 @@ return
                                     <tr>
                                         <td class="intro"><a
                                                 href="http://gl-pt.obdurodon.org/edition.php?&amp;song[]={$fen/ancestor::tei:div[1]/substring(@corresp, 2)}&amp;line={$fen/ancestor::tei:l/@n/string()}"
-                                                target="_blank">{transform:transform($fen/.., 'xmldb:exist:///db/VTLGP/xslt/ex.xsl', ($rdg))}</a></td>
+                                                target="_blank">{transform:transform($fen/.., 'xmldb:exist:///db/variatio/xslt/ex.xsl', ($rdg))}</a></td>
                                         <td>{
                                                 (if ($fen/contains(@wit, ' ')) then
                                                     <ul>{
@@ -257,7 +257,7 @@ return
                     {
                         for $result in $values
                         return
-                            <li>{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'en']/text(), 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}
+                            <li>{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'en']/text(), 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}
                                 <ul>
                                     <li><a
                                             href="#graphs{$result}">Graph</a></li>
@@ -273,7 +273,7 @@ return
                      {
                         for $result in $values
                         return
-                            <li>{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'pt']/text(), 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}
+                            <li>{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'pt']/text(), 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}
                                 <ul>
                                     <li><a
                                             href="#graf{$result}">Gráficas</a></li>
@@ -290,7 +290,7 @@ return
                      {
                         for $result in $values
                         return
-                            <li>{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'gl']/text(), 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}
+                            <li>{transform:transform($ling-features[@xml:id = $result]//tei:string[@xml:lang eq 'gl']/text(), 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}
                                 <ul>
                                     <li><a
                                             href="#grafo{$result}">Gráficas</a></li>

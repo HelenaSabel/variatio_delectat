@@ -3,7 +3,7 @@
         <polyline fill="none" stroke="#32281b" stroke-width="1" points="0,0 288,0 298,15 302,-15 312,0 580,0"/>
         <line x1="0" x2="0" y1="0" y2="-380" stroke="#32281b" stroke-width="1"/>
         <text x="-50" y="-190" text-anchor="middle" fill="#32281b" style="writing-mode:tb" transform="rotate(180 -50 -190)">Número ocorrências</text>
-        <text x="290" text-anchor="middle" y="70" fill="#32281b">Folio Ms. A</text>
+        <text x="330" text-anchor="middle" y="70" fill="#32281b">Folio Ms. A</text>
         <line x1="-3" x2="3" y1="-40" y2="-40" stroke="#32281b" stroke-width="1"/>
         <line x1="-3" x2="3" y1="-80" y2="-80" stroke="#32281b" stroke-width="1"/>
         <line x1="-3" x2="3" y1="-120" y2="-120" stroke="#32281b" stroke-width="1"/>
@@ -65,33 +65,33 @@
         <text fill="#32281b" font-size="11" x="350" y="120">Número de fenómenos únicos</text>
         <circle r="3.5" cx="40" cy="-70" fill="#11894A"/>
         <circle r="3.5" cx="40" cy="-48" fill="#2B3966"/>
-        <circle r="3.5" cx="80" cy="-266" fill="#11894A"/>
-        <circle r="3.5" cx="80" cy="-132" fill="#2B3966"/>
-        <circle r="3.5" cx="120" cy="-238" fill="#11894A"/>
-        <circle r="3.5" cx="120" cy="-118" fill="#2B3966"/>
-        <circle r="3.5" cx="160" cy="-216" fill="#11894A"/>
-        <circle r="3.5" cx="160" cy="-94" fill="#2B3966"/>
-        <circle r="3.5" cx="200" cy="-200" fill="#11894A"/>
-        <circle r="3.5" cx="200" cy="-82" fill="#2B3966"/>
-        <circle r="3.5" cx="240" cy="-300" fill="#11894A"/>
-        <circle r="3.5" cx="240" cy="-130" fill="#2B3966"/>
-        <circle r="3.5" cx="280" cy="-146" fill="#11894A"/>
-        <circle r="3.5" cx="280" cy="-58" fill="#2B3966"/>
-        <circle r="3.5" cx="320" cy="-162" fill="#11894A"/>
-        <circle r="3.5" cx="320" cy="-78" fill="#2B3966"/>
-        <circle r="3.5" cx="360" cy="-140" fill="#11894A"/>
-        <circle r="3.5" cx="360" cy="-68" fill="#2B3966"/>
-        <circle r="3.5" cx="400" cy="-166" fill="#11894A"/>
-        <circle r="3.5" cx="400" cy="-86" fill="#2B3966"/>
-        <circle r="3.5" cx="440" cy="-154" fill="#11894A"/>
-        <circle r="3.5" cx="440" cy="-84" fill="#2B3966"/>
-        <circle r="3.5" cx="480" cy="-104" fill="#11894A"/>
-        <circle r="3.5" cx="480" cy="-52" fill="#2B3966"/>
-        <circle r="3.5" cx="520" cy="-38" fill="#11894A"/>
-        <circle r="3.5" cx="520" cy="-22" fill="#2B3966"/>
-        <circle r="3.5" cx="560" cy="-126" fill="#11894A"/>
-        <circle r="3.5" cx="560" cy="-52" fill="#2B3966"/>
-        <polyline fill="none" opacity="0.9" stroke="#11894A" stroke-width="3" points="40,-70 80,-266 120,-238 160,-216 200,-200 240,-300 280,-146 320,-162 360,-140 400,-166 440,-154 480,-104 520,-38 560,-126"/>
-        <polyline fill="none" stroke="#2B3966" opacity="0.9" stroke-width="3" points="40,-48 80,-132 120,-118 160,-94 200,-82 240,-130 280,-58 320,-78 360,-68 400,-86 440,-84 480,-52 520,-22 560,-52"/>
+        <circle r="3.5" cx="80" cy="-272" fill="#11894A"/>
+        <circle r="3.5" cx="80" cy="-140" fill="#2B3966"/>
+        <circle r="3.5" cx="120" cy="-236" fill="#11894A"/>
+        <circle r="3.5" cx="120" cy="-122" fill="#2B3966"/>
+        <circle r="3.5" cx="160" cy="-226" fill="#11894A"/>
+        <circle r="3.5" cx="160" cy="-108" fill="#2B3966"/>
+        <circle r="3.5" cx="200" cy="-202" fill="#11894A"/>
+        <circle r="3.5" cx="200" cy="-84" fill="#2B3966"/>
+        <circle r="3.5" cx="240" cy="-302" fill="#11894A"/>
+        <circle r="3.5" cx="240" cy="-146" fill="#2B3966"/>
+        <circle r="3.5" cx="280" cy="-192" fill="#11894A"/>
+        <circle r="3.5" cx="280" cy="-88" fill="#2B3966"/>
+        <circle r="3.5" cx="320" cy="-160" fill="#11894A"/>
+        <circle r="3.5" cx="320" cy="-76" fill="#2B3966"/>
+        <circle r="3.5" cx="360" cy="-214" fill="#11894A"/>
+        <circle r="3.5" cx="360" cy="-100" fill="#2B3966"/>
+        <circle r="3.5" cx="400" cy="-162" fill="#11894A"/>
+        <circle r="3.5" cx="400" cy="-90" fill="#2B3966"/>
+        <circle r="3.5" cx="440" cy="-160" fill="#11894A"/>
+        <circle r="3.5" cx="440" cy="-86" fill="#2B3966"/>
+        <circle r="3.5" cx="480" cy="-138" fill="#11894A"/>
+        <circle r="3.5" cx="480" cy="-64" fill="#2B3966"/>
+        <circle r="3.5" cx="520" cy="-74" fill="#11894A"/>
+        <circle r="3.5" cx="520" cy="-42" fill="#2B3966"/>
+        <circle r="3.5" cx="560" cy="-162" fill="#11894A"/>
+        <circle r="3.5" cx="560" cy="-66" fill="#2B3966"/>
+        <polyline fill="none" opacity="0.9" stroke="#11894A" stroke-width="3" points="40,-70 80,-272 120,-236 160,-226 200,-202 240,-302 280,-192 320,-160 360,-214 400,-162 440,-160 480,-138 520,-74 560,-162"/>
+        <polyline fill="none" stroke="#2B3966" opacity="0.9" stroke-width="3" points="40,-48 80,-140 120,-122 160,-108 200,-84 240,-146 280,-88 320,-76 360,-100 400,-90 440,-86 480,-64 520,-42 560,-66"/>
     </g>
 </svg>

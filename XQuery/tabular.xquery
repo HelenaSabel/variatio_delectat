@@ -16,9 +16,9 @@ declare function djb:locus($from as node()?, $to as node()?)
             concat($from, '-', $to))
 };
 declare variable $selection := request:get-parameter("song", 'A82B186b');
-declare variable $cantigas := collection('/db/VTLGP/edition')//tei:div[@type eq 'poem'];
+declare variable $cantigas := collection('/db/variatio/edition')//tei:div[@type eq 'poem'];
 declare variable $song := $cantigas[substring(@corresp, 2) = $selection];
-declare variable $author := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person[string(@xml:id) = $song//tei:name[@role eq 'author']/substring(@ref, 2)];
+declare variable $author := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person[string(@xml:id) = $song//tei:name[@role eq 'author']/substring(@ref, 2)];
 
 (<div
     class="metadata">
@@ -54,7 +54,7 @@ declare variable $author := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:p
                             value="{$witness/@wit}"/>
                     </parameters>
                     return
-                        <tr>{transform:transform($line[ancestor::tei:div/tei:head/descendant::tei:rdg/@wit = $witness/@wit], doc('/db/VTLGP/xslt/table.xsl'), $parameter)}</tr>
+                        <tr>{transform:transform($line[ancestor::tei:div/tei:head/descendant::tei:rdg/@wit = $witness/@wit], doc('/db/variatio/xslt/table.xsl'), $parameter)}</tr>
                 
                 }</table>)
     

@@ -15,8 +15,10 @@
     </head>
     <body><!--#include virtual="ssi/header.html"-->
         <main>
+        
             <h1><span class="pt">Apresentação</span><span class="en">About</span><span class="gl"
-                    >Presentación</span></h1>
+                    >Presentación</span></h1>         
+            
             <h2><span class="pt">O que posso encontrar neste site?</span><span class="en">What you
                     will find in this site</span>
                 <span class="gl">Que podo encontrar neste portal?</span>
@@ -123,13 +125,13 @@
             <p><span class="pt gl">Neste momento, o corpus estudado está conformado por</span><span
                     class="en">At this point, the corpus is composed of</span>
                 <?php require_once('config.php');
-            $xql = REST_PATH . "/db/VTLGP/queries/count.xquery";
+            $xql = REST_PATH . "/db/variatio/queries/count.xquery";
             echo file_get_contents($xql);
             ?>
                 <span class="gl pt">cantigas, compostas por</span><span class="en">songs written
                     by</span>
                 <?php require_once('config.php');
-            $xql = REST_PATH . "/db/VTLGP/queries/count2.xquery";
+            $xql = REST_PATH . "/db/variatio/queries/count2.xquery";
             echo file_get_contents($xql);
             ?>
                 <span class="pt"> trovadores.</span><span class="gl">trobadores.</span><span
@@ -137,7 +139,7 @@
             <h3><span class="gl pt">Textos</span><span class="en">Texts</span></h3>
             <!--#include virtual="ssi/corpus.svg"-->
             <?php require_once('config.php');
-    $xql = REST_PATH . "/db/VTLGP/queries/corpus-composition.xquery";
+    $xql = REST_PATH . "/db/variatio/queries/corpus-composition.xquery";
     echo file_get_contents($xql);
     ?>
             <!--<p><a href="visualizations.php"><span class="pt gl">Outras <span class="pt">visualizações</span><span class="gl">visualizacións</span> (incompleto)</span><span class="en">Additional visualizations (in progress)</span>.</a></p>-->

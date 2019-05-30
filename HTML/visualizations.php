@@ -25,7 +25,7 @@
         <!--#include virtual="ssi/radar-plot.svg"-->
         <?php
         require_once('config.php');
-        $xql = REST_PATH . "/db/VTLGP/queries/radar-plot-form.xquery";
+        $xql = REST_PATH . "/db/variatio/queries/radar-plot-form.xquery";
         echo file_get_contents($xql);
         ?>
     </div>

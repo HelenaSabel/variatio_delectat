@@ -4,11 +4,11 @@ declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
 declare option output:method "xhtml";
 declare option output:indent "yes";
 declare option output:encoding "UTF-8";
-let $authors := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = collection('/db/VTLGP/edition')//tei:name[@role eq 'author']/@ref]
+let $authors := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = collection('/db/variatio/edition')//tei:name[@role eq 'author']/@ref]
 let $periods := $authors/tei:floruit/@period
-let $copyists := collection('/db/VTLGP/edition')//tei:div//tei:title//tei:rdg/substring(@hand, 2)
-let $authorsImpar := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = collection('/db/VTLGP/edition')//tei:name[@role eq 'author']/@ref][tei:persName/matches(., '^[A-J]')]
-let $authorsPar := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = collection('/db/VTLGP/edition')//tei:name[@role eq 'author']/@ref][tei:persName/matches(., '^[L-Z]')]
+let $copyists := collection('/db/variatio/edition')//tei:div//tei:title//tei:rdg/substring(@hand, 2)
+let $authorsImpar := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = collection('/db/variatio/edition')//tei:name[@role eq 'author']/@ref][tei:persName/matches(., '^[A-J]')]
+let $authorsPar := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = collection('/db/variatio/edition')//tei:name[@role eq 'author']/@ref][tei:persName/matches(., '^[L-Z]')]
 return
     
     (<form class="authors"
@@ -19,7 +19,7 @@ return
         {
             for $i in 1 to (count($authorsImpar))
             let $author := $authorsImpar[$i]
-            let $songs := collection('/db/VTLGP/edition')//tei:name[@role eq 'author'][@ref = $author/concat('#', @xml:id)]/ancestor::tei:div
+            let $songs := collection('/db/variatio/edition')//tei:name[@role eq 'author'][@ref = $author/concat('#', @xml:id)]/ancestor::tei:div
             order by $author
             return
                 <fieldset>
@@ -81,7 +81,7 @@ return
             for $x in 1 to (count($authorsPar))
             let $author := $authorsPar[$x]
             let $i := $x + 14
-            let $songs := collection('/db/VTLGP/edition')//tei:name[@role eq 'author'][@ref = $author/concat('#', @xml:id)]/ancestor::tei:div
+            let $songs := collection('/db/variatio/edition')//tei:name[@role eq 'author'][@ref = $author/concat('#', @xml:id)]/ancestor::tei:div
             order by $author
             return
                 <fieldset>
@@ -156,7 +156,7 @@ return
         action="edition.php">
         {
             for $period in distinct-values($periods)
-            let $songs := collection('/db/VTLGP/edition')//tei:name[@role eq 'author'][@ref = $authors[tei:floruit/@period eq $period]/concat('#', @xml:id)]/ancestor::tei:div
+            let $songs := collection('/db/variatio/edition')//tei:name[@role eq 'author'][@ref = $authors[tei:floruit/@period eq $period]/concat('#', @xml:id)]/ancestor::tei:div
             order by number($period)
             return
                 <fieldset>
@@ -229,7 +229,7 @@ return
         action="edition.php">
         {
             for $hand in distinct-values($copyists)
-            let $songs := collection('/db/VTLGP/edition')//tei:div[@type eq 'poem'][.//tei:title//tei:rdg/substring(@hand, 2) = $hand]
+            let $songs := collection('/db/variatio/edition')//tei:div[@type eq 'poem'][.//tei:title//tei:rdg/substring(@hand, 2) = $hand]
             order by $hand
             return
                 <fieldset>

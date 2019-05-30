@@ -24,7 +24,7 @@
     $parameters = $_GET['phenomenon'];
     $values = implode(",", $parameters);
     require_once('config.php');
-    $query = REST_PATH . "/db/VTLGP/queries/ling.xquery?phenomenon=" . $values;
+    $query = REST_PATH . "/db/variatio/queries/ling.xquery?phenomenon=" . $values;
     echo file_get_contents($query);
     ?>
 

@@ -31,8 +31,8 @@ declare function functx:distinct-deep
         $nodes[$seq][not(functx:is-node-in-sequence-deep-equal(
         ., $nodes[position() < $seq]))]
 };
-declare variable $cantigas := collection('/db/VTLGP/edition')//tei:div[@type eq 'poem'];
-declare variable $poets := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person[@xml:id/string() = $cantigas//tei:name[@role eq 'author']/substring(@ref, 2)];
+declare variable $cantigas := collection('/db/variatio/edition')//tei:div[@type eq 'poem'];
+declare variable $poets := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person[@xml:id/string() = $cantigas//tei:name[@role eq 'author']/substring(@ref, 2)];
 declare variable $partialselection := request:get-parameter("song", ());
 declare variable $partialSelection := request:get-parameter("author", ());
 declare variable $nextSelection := request:get-parameter("scribe", ());
@@ -55,7 +55,7 @@ return
         <section>
             {
                 for $song in functx:distinct-deep($songs)
-                let $author := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = $song//tei:name[@role eq 'author']/@ref]
+                let $author := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = $song//tei:name[@role eq 'author']/@ref]
                 order by $song/number(substring-before(substring(@corresp, 3), 'B'))
                 return
                     <div
@@ -124,7 +124,7 @@ return
                                                 class="pt gl">Copista</span><span
                                                 class="en">Copyist</span>: {$witness/substring(@hand, 2)}</h4>
                                         
-                                        {transform:transform($song//tei:lg, doc('/db/VTLGP/xslt/reading.xsl'), $parameter)}
+                                        {transform:transform($song//tei:lg, doc('/db/variatio/xslt/reading.xsl'), $parameter)}
                                     
                                     </div>
                             

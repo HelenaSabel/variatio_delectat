@@ -95,7 +95,7 @@
     $scribeValues = implode(",", $scribes);
     $line = $_GET["line"];
     require_once('config.php');
-    $query = REST_PATH . "/db/VTLGP/queries/edition.xquery?song=" . $songValues . "&author=" . $authorValues .
+    $query = REST_PATH . "/db/variatio/queries/edition.xquery?song=" . $songValues . "&author=" . $authorValues .
          "&scribe=" . $scribeValues . "&line=" . $line;
     echo file_get_contents($query);
 

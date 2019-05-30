@@ -1,7 +1,7 @@
 xquery version "3.0";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
-declare variable $songs := collection('/db/VTLGP/edition')//tei:div[@type eq 'poem']; (:corpus of songs:)
-declare variable $fs := doc('/db/VTLGP/ancillary/feature-library.xml'); (:variants file:)
+declare variable $songs := collection('/db/variatio/edition')//tei:div[@type eq 'poem']; (:corpus of songs:)
+declare variable $fs := doc('/db/variatio/ancillary/feature-library.xml'); (:variants file:)
 declare variable $ling-features := $fs//tei:fs[tei:f/tei:fs[@type eq 'linguistic']]/@xml:id;
 (: Since there is a gap in my edition regarding the location of the songs, I manually create the intervals :)
 declare variable $sections :=

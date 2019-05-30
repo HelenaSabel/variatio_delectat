@@ -15,15 +15,22 @@
        <script src="javascript/header.js" type="text/javascript">/**/</script>
        <script src="javascript/menu.js" type="text/javascript">/**/</script>
       <!--#include virtual="ssi/favicon.html"-->
+     
+
    </head>
    <body><!--#include virtual="ssi/header.html"-->
       <main>
+                  
+         
          <h1>Corpus</h1>
+
+            
+            
          <h2 class="pt gl">Por autor</h2>
          <h2 class="en">By author</h2>         
          <?php
             require_once('config.php');
-            $xql = REST_PATH . "/db/VTLGP/queries/corpus.xquery";
+            $xql = REST_PATH . "/db/variatio/queries/corpus.xquery";
             echo file_get_contents($xql);
          ?>         
       </main>

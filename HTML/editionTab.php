@@ -87,7 +87,7 @@
 
     $value = $_SERVER['QUERY_STRING'];
     require_once('config.php');
-    $query = REST_PATH . "/db/VTLGP/queries/tabular.xquery?" . $value;
+    $query = REST_PATH . "/db/variatio/queries/tabular.xquery?" . $value;
     echo file_get_contents($query);
 
     ?>

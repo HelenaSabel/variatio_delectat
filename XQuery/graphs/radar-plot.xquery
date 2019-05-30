@@ -1,12 +1,13 @@
 xquery version "3.0";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
-declare variable $songs := collection('/db/VTLGP/edition')//tei:div[@type eq 'poem'];
-declare variable $fs := doc('/db/VTLGP/ancillary/feature-library.xml');
-declare variable $ling-features := $fs//tei:fvLib[@corresp eq '#linguistic']/tei:fs/@xml:id;
-declare variable $equipolent := $fs//tei:fvLib[@n eq 'equipolent readings']/tei:fs/@xml:id;
-declare variable $scribalError := $fs//tei:fvLib[@corresp eq '#scribal']/tei:fs/@xml:id;
-declare variable $significant := $equipolent | $scribalError | $ling-features;
-declare variable $poets := doc('/db/VTLGP/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = $songs//tei:name[@role eq 'author']/@ref];
+declare variable $songs := collection('/db/variatio/edition')//tei:div[@type eq 'poem'];
+declare variable $fs := doc('/db/variatio/ancillary/feature-library.xml');
+declare variable $ling-features := $fs//tei:fs[tei:f[@name eq 'taxonomy']/tei:fs[@type eq 'linguistic']]/@xml:id;
+declare variable $equipolent := $fs//tei:fs[tei:f[@name eq 'taxonomy']/tei:fs[@type eq 'equipolent']]/@xml:id;
+declare variable $scribalError := $fs//tei:fs[tei:f[@name eq 'taxonomy']/tei:fs[@type eq 'error']]/@xml:id;
+declare variable $material := $fs//tei:fs[tei:f[@name eq 'taxonomy']/tei:fs[@type eq 'material']]/@xml:id;
+declare variable $significant := $equipolent | $scribalError | $material | $ling-features;
+declare variable $poets := doc('/db/variatio/ancillary/corpus-autores.xml')//tei:person[concat('#', @xml:id) = $songs//tei:name[@role eq 'author']/@ref];
 declare variable $periods := $poets[@xml:id = $songs//tei:name/substring(@ref, 2)]/tei:floruit/@period;
 declare variable $fixedWidth := number('400');
 declare variable $radio := number("3.5");
@@ -186,27 +187,27 @@ declare variable $max := number('320');
             text-anchor="start">80</text>
         <text
             x="25"
-            y="-307">Variantes de língua</text>
+            y="-307">Variantes de lingua</text>
         <text
             x="-300"
             y="-30"
-            text-anchor="end">Erros de cópia</text>
+            text-anchor="end">Erros de copia</text>
         <text
             y="17"
             x="323">Outras</text>
         <text
             x="-32"
             text-anchor="end"
-            y="310">Equipolentes</text>
+            y="310">Diverxentes</text>
     </g>
     {
         for $period at $pos in distinct-values($periods)
         let $booksong := $songs[.//tei:name/substring(@ref, 2) = $poets[./tei:floruit/@period eq $period]/@xml:id]
         let $total := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $significant]/string-length(.))
+        let $outras := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $material]/string-length(.))  * $fixedWidth div $total
         let $errors := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $scribalError]/string-length(.)) * $fixedWidth div $total
         let $equip := sum($booksong/descendant::tei:rdg[contains(@ana, '#equip')]/string-length(.)) * $fixedWidth div $total
         let $ling := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $ling-features]/string-length(.)) * $fixedWidth div $total
-        let $outras := $total * $fixedWidth div $total - $errors - $equip - $ling
         return
             <g
                 transform="translate(440,350)"
@@ -253,10 +254,10 @@ declare variable $max := number('320');
         for $author at $pos in $sortedAuthors
         let $booksong := $songs[descendant::tei:name[@role eq 'author']/@ref = concat('#', $author/@xml:id)]
         let $total := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $significant]/string-length(.))
+        let $outras := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $material]/string-length(.)) * $fixedWidth div $total
         let $errors := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $scribalError]/string-length(.)) * $fixedWidth div $total
         let $equip := sum($booksong/descendant::tei:rdg[contains(@ana, '#equip')]/string-length(.)) * $fixedWidth div $total
         let $ling := sum($booksong/descendant::tei:rdg[tokenize(replace(@ana, '#', ''), '\s+') = $ling-features]/string-length(.)) * $fixedWidth div $total
-        let $outras := $total * $fixedWidth div $total - $errors - $equip - $ling
         let $no := $pos + 2
         return
             <g

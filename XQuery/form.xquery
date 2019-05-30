@@ -4,12 +4,12 @@ declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
 declare option output:method "xhtml";
 declare option output:indent "yes";
 declare option output:encoding "UTF-8";
-let $songs := collection('/db/VTLGP/edition')//tei:div[@type eq 'poem']
+let $songs := collection('/db/variatio/edition')//tei:div[@type eq 'poem']
 let $anas := $songs//tei:rdg/@ana
 let $ana := distinct-values(for $values in $anas
 return
     tokenize($values, '\s+'))
-let $file := doc('/db/VTLGP/ancillary/feature-library.xml')
+let $file := doc('/db/variatio/ancillary/feature-library.xml')
 let $ling-features := $file//tei:fvLib/tei:fs[concat('#', @xml:id) = $ana]
 let $phonetic := $ling-features[.//tei:fs[@type eq 'phonetic']]
 let $morph := $ling-features[.//tei:fs[@type eq 'morphosyntactic']/tei:f[@name eq 'POS']/tei:fs]
@@ -37,7 +37,7 @@ return
                             id="{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <fieldset>
@@ -54,7 +54,7 @@ return
                             id="{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <fieldset>
@@ -71,7 +71,7 @@ return
                             id="{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <button
@@ -99,7 +99,7 @@ return
                             id="gl{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="gl{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="gl{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <fieldset>
@@ -116,7 +116,7 @@ return
                             id="gl{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="gl{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="gl{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <fieldset>
@@ -133,7 +133,7 @@ return
                             id="gl{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="gl{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="gl{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             
             </fieldset>
@@ -162,7 +162,7 @@ return
                             id="en{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="en{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="en{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <fieldset>
@@ -179,7 +179,7 @@ return
                             id="en{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="en{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="en{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <fieldset>
@@ -196,7 +196,7 @@ return
                             id="en{$id/@xml:id}"
                             value="{$id/@xml:id}"/>,
                         <label
-                            for="en{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/VTLGP/xslt/string.xsl', ())}</label>, <br/>)
+                            for="en{$id/@xml:id}">{transform:transform($name, 'xmldb:exist:///db/variatio/xslt/string.xsl', ())}</label>, <br/>)
                 }
             </fieldset>
             <button
